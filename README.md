@@ -1,4 +1,4 @@
-# Mental Sağlık Riski Tahmini <br> (Mental Health Risk Prediction)
+# Mental Sağlık Riski Tahmini - Mental Health Risk Prediction
 
 Bu proje, bireylerin çeşitli kişisel ve işle ilgili faktörlerine dayanarak mental sağlık riski seviyelerini (Düşük, Orta, Yüksek) tahmin etmeyi amaçlayan bir makine öğrenmesi uygulamasıdır. Veri ön işleme, özellik seçimi, model eğitimi ve kullanıcı dostu bir Streamlit arayüzü içerir.
 
@@ -23,8 +23,8 @@ Projeyi yerel ortamınızda çalıştırmak için aşağıdaki adımları izleyi
 
 1. **Repoyu klonlayın:**
    ```bash
-   git clone https://github.com/kullanici_adiniz/repo_adi.git
-   cd repo_adi
+   git clone https://github.com/furkan-ylmz/Mental-Health-Risk-Prediction.git
+   cd Mental-Health-Risk-Prediction
    ```
 
 2. **Gerekli kütüphaneleri yükleyin:**
