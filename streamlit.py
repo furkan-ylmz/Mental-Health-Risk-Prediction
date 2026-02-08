@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 
-# Özelliklerin Türkçe karşılıkları
+# Feature translations to Turkish
 feature_tr = {
     "age": "Yaş",
     "gender": "Cinsiyet",
@@ -19,7 +19,7 @@ feature_tr = {
     "productivity_score": "Üretkenlik Skoru",
 }
 
-# Tahmin edilen riskin string karşılıkları
+# String equivalents of predicted risk
 risk_map = {0: "Yüksek", 1: "Düşük", 2: "Orta"}
 
 @st.cache_resource
@@ -90,7 +90,7 @@ def main():
     st.write("Veri setinden örnekler:")
     st.dataframe(data.head(50))
 
-    # Sadece modelin beklediği özellikleri kullan
+    # Use only features expected by the model
     if feature_names is not None:
         used_features = [col for col in feature_names if col in data.columns]
     else:
@@ -104,7 +104,7 @@ def main():
 
     if st.sidebar.button("Tahmin Yap"):
         st.write("Kullanıcı girdileri:")
-        # Türkçe başlıklarla göster
+        # Display with Turkish titles
         user_input_df = pd.DataFrame([st.session_state.input_data])
         user_input_df.columns = [feature_tr.get(col, col) for col in user_input_df.columns]
         st.write(user_input_df)

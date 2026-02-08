@@ -125,7 +125,7 @@ print(f"Random Forest (Chi2) Accuracy: {accuracy_chi2_rf}")
 print(f"Random Forest (ANOVA) Accuracy: {accuracy_anova_rf}")
 print(f"Random Forest (RFE) Accuracy: {accuracy_rfe_rf}")
 
-# Model performans fonksiyonu
+# Model performance function
 def model_performance(model, X_test, y_test):
     y_pred = model.predict(X_test)
     accuracy = accuracy_score(y_test, y_pred)
@@ -150,7 +150,7 @@ accuracy_chi2_rf, precision_chi2_rf, recall_chi2_rf, f1_chi2_rf = model_performa
 accuracy_anova_rf, precision_anova_rf, recall_anova_rf, f1_anova_rf = model_performance(rf_model_anova, X_test_anova, y_test)
 accuracy_rfe_rf, precision_rfe_rf, recall_rfe_rf, f1_rfe_rf = model_performance(rf_model_rfe, X_test_rfe, y_test)
 
-# Confusion matrix'leri oluştur
+# Create confusion matrices
 cm_chi2_tree = confusion_matrix(y_test, y_pred_chi2_tree)
 cm_anova_tree = confusion_matrix(y_test, y_pred_anova_tree)
 cm_rfe_tree = confusion_matrix(y_test, y_pred_rfe_tree)
@@ -196,7 +196,7 @@ metrics = get_metrics_for_all_methods()
 
 model_names = ['MLP', 'KNN', 'Decision Tree', 'Random Forest']
 
-# Ardından toplu tabloyu yazdır
+# Then print the summary table
 performance_df = pd.DataFrame({
     'Model': model_names,
     'Chi2 Accuracy': metrics["accuracy"]["Chi2"],
@@ -238,7 +238,7 @@ else:
 model_variable_name = f"{model_variable_mapping[best_model_name]}_{transformation.lower()}"
 best_model = eval(model_variable_name)
 
-# Kullandığın özellik isimlerini belirle
+# Determine used feature names
 if transformation == "Chi2":
     feature_names = list(chi2_selected_features)
 elif transformation == "ANOVA":
@@ -251,7 +251,7 @@ else:
 if not os.path.exists("models"):
     os.makedirs("models")
 
-# Modeli kaydederken özellik isimlerini de ekle
+# Include feature names when saving the model
 with open("models/best_model.pkl", "wb") as file:
     pickle.dump({
         "model": best_model,
@@ -332,7 +332,7 @@ plt.legend(title="Metrik")
 plt.tight_layout()
 plt.show()
 
-# Decision Tree için 3 confusion matrix'i tek satırda göster
+# Show 3 confusion matrices for Decision Tree in a single row
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 for ax, cm, title in zip(
     axes,
@@ -345,7 +345,7 @@ for ax, cm, title in zip(
 plt.tight_layout()
 plt.show()
 
-# MLP için 3 confusion matrix'i tek satırda göster
+# Show 3 confusion matrices for MLP in a single row
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 for ax, cm, title in zip(
     axes,
@@ -358,7 +358,7 @@ for ax, cm, title in zip(
 plt.tight_layout()
 plt.show()
 
-# KNN için 3 confusion matrix'i tek satırda göster
+# Show 3 confusion matrices for KNN in a single row
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 for ax, cm, title in zip(
     axes,
@@ -371,7 +371,7 @@ for ax, cm, title in zip(
 plt.tight_layout()
 plt.show()
 
-# Random Forest için 3 confusion matrix'i tek satırda göster
+# Show 3 confusion matrices for Random Forest in a single row
 fig, axes = plt.subplots(1, 3, figsize=(15, 4))
 for ax, cm, title in zip(
     axes,
