@@ -1,4 +1,4 @@
-# Mental Sağlık Riski Tahmini (Mental Health Risk Prediction)
+# Mental Sağlık Riski Tahmini <br> (Mental Health Risk Prediction)
 
 Bu proje, bireylerin çeşitli kişisel ve işle ilgili faktörlerine dayanarak mental sağlık riski seviyelerini (Düşük, Orta, Yüksek) tahmin etmeyi amaçlayan bir makine öğrenmesi uygulamasıdır. Veri ön işleme, özellik seçimi, model eğitimi ve kullanıcı dostu bir Streamlit arayüzü içerir.
 
